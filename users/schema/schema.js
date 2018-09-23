@@ -2,7 +2,8 @@ const graphql = require('graphql');
 const axios = require('axios');
 
 const URL = {
-    USERS_ENDPOINT: "http://localhost:3000/users/"
+    USERS_ENDPOINT: "http://localhost:3000/users/",
+    COMPANIES_ENDPOINT: "http://localhost:3000/companies/",
 }
 
 const {
@@ -13,12 +14,28 @@ const {
 
 } = graphql;
 
+const CompanyType = new GraphQLObjectType({
+    name: "Company",
+    fields: {
+        id: { type: GraphQLString} ,
+        name: { type: GraphQLString} ,
+        description: { type: GraphQLString} ,
+    }
+})
+
 const UserType = new GraphQLObjectType({
     name: 'User',
     fields: {
         id: { type: GraphQLString}  ,
         firstName: { type: GraphQLString} ,
         age: { type: GraphQLInt} ,
+        company: {
+            type: CompanyType,
+            resolve(parentValue, args) {
+                return axios.get(`${URL.COMPANIES_ENDPOINT}${parentValue.companyId}`)
+                    .then(resp => resp.data);
+            }
+        }
     }
 
 });
