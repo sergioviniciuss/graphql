@@ -17,18 +17,18 @@ const {
 const CompanyType = new GraphQLObjectType({
     name: "Company",
     fields: {
-        id: { type: GraphQLString} ,
-        name: { type: GraphQLString} ,
-        description: { type: GraphQLString} ,
+        id: { type: GraphQLString},
+        name: { type: GraphQLString},
+        description: { type: GraphQLString},
     }
 })
 
 const UserType = new GraphQLObjectType({
     name: 'User',
     fields: {
-        id: { type: GraphQLString}  ,
-        firstName: { type: GraphQLString} ,
-        age: { type: GraphQLInt} ,
+        id: { type: GraphQLString },
+        firstName: { type: GraphQLString },
+        age: { type: GraphQLInt },
         company: {
             type: CompanyType,
             resolve(parentValue, args) {
