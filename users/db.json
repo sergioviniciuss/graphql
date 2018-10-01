@@ -1,8 +1,13 @@
 {
     "users": [
-        { "id": "1", "firstName": "Sergio", "age": 31, "companyId": "1" },
+        { "id": "1", "firstName": "Sergio", "age": 32, "companyId": "1" },
         { "id": "2", "firstName": "Josiane", "age": 36, "companyId" : "2"},
-        { "id": "3", "firstName": "Joao", "age": 28, "companyId": "1" }
+        { "id": "3", "firstName": "Markus", "age": 33, "companyId": "1" },
+        { "id": "4", "firstName": "Ligia", "age": 28, "companyId": "2" },
+        { "id": "4", "firstName": "Dominic", "age": 23, "companyId": "1" },
+        { "id": "4", "firstName": "Mohab", "age": 36, "companyId": "1" },
+        { "id": "4", "firstName": "Tobi", "age": 23, "companyId": "1" },
+        { "id": "4", "firstName": "Vlad", "age": 25, "companyId": "1" }
     ],
     "companies": [
         { "id": "1", "name": "Raisin", "description": "Marketplace of investiment products"},
